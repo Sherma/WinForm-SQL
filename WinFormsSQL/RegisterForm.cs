@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -133,5 +134,77 @@ namespace WinFormsSQL
                 passField.ForeColor = Color.Gray;
             }
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            if (userNameField.Text == "Ім'я")
+            {
+                MessageBox.Show("Введіть ім'я");
+                return;
+            }
+
+            if (userSurnameField.Text == "Фамілія")
+            {
+                MessageBox.Show("Введіть Фамілію");
+                return;
+            }
+
+            if (loginField.Text == "Логін")
+            {
+                MessageBox.Show("Введіть Логін");
+                return;
+            }
+
+            if (passField.Text == "Пароль")
+            {
+                MessageBox.Show("Введіть Пароль");
+                return;
+            }
+
+            if (isUserExists())
+                return;
+
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `pass`, `name`, `surname`) VALUES (@login, @password, @name, @surname)", db.getConnection());
+
+            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginField.Text;
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = passField.Text;
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
+            command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = userSurnameField.Text;
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Реєстрація пройшла успішно");
+            else
+                MessageBox.Show("Під час реєстрації виникла помилка");
+
+            db.closeConnection();
+        }
+
+        public Boolean isUserExists()
+        {
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`=@uL", db.getConnection());
+
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Такий логін вже існує, введіть унікальний логін");
+                return true;
+            }
+            else
+                return false;
+        }
+
     }
 }

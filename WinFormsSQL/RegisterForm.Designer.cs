@@ -99,6 +99,7 @@
             this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "Зареєструватися";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // passField
             // 
