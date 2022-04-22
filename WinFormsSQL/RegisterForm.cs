@@ -157,7 +157,7 @@ namespace WinFormsSQL
 
             if (passField.Text == "Пароль")
             {
-                MessageBox.Show("Введіть Пароль ");
+                MessageBox.Show("Введіть Пароль");
                 return;
             }
 
