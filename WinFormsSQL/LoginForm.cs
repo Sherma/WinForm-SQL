@@ -23,7 +23,7 @@ namespace WinFormsSQL
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -78,9 +78,30 @@ namespace WinFormsSQL
             adapter.Fill(table);
 
             if(table.Rows.Count>0)
-                MessageBox.Show("Yes");
+            {
+                this.Hide();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+            }
             else
-                MessageBox.Show("No");
+                MessageBox.Show("Ви не авторизовані");
+        }
+
+        private void registerLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+        }
+
+        private void registerLabel_MouseEnter(object sender, EventArgs e)
+        {
+            registerLabel.ForeColor = Color.White;
+        }
+
+        private void registerLabel_MouseLeave(object sender, EventArgs e)
+        {
+            registerLabel.ForeColor = Color.Black;
         }
     }
 }

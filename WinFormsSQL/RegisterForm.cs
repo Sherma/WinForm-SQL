@@ -35,7 +35,7 @@ namespace WinFormsSQL
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         Point lastPoint;
@@ -206,5 +206,21 @@ namespace WinFormsSQL
                 return false;
         }
 
+        private void autorizationLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void autorizationLabel_MouseEnter(object sender, EventArgs e)
+        {
+            autorizationLabel.ForeColor = Color.White;
+        }
+
+        private void autorizationLabel_MouseLeave(object sender, EventArgs e)
+        {
+            autorizationLabel.ForeColor = Color.Black;
+        }
     }
 }

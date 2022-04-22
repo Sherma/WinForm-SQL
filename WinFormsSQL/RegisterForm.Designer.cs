@@ -30,23 +30,24 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.userSurnameField = new System.Windows.Forms.TextBox();
+            this.userNameField = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.passField = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.loginField = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Label();
-            this.userNameField = new System.Windows.Forms.TextBox();
-            this.userSurnameField = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.autorizationLabel = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -65,6 +66,7 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.mainPanel.Controls.Add(this.autorizationLabel);
             this.mainPanel.Controls.Add(this.pictureBox4);
             this.mainPanel.Controls.Add(this.pictureBox3);
             this.mainPanel.Controls.Add(this.userSurnameField);
@@ -78,10 +80,56 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(800, 376);
+            this.mainPanel.Size = new System.Drawing.Size(800, 390);
             this.mainPanel.TabIndex = 1;
             this.mainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseDown);
             this.mainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseMove);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::WinFormsSQL.Properties.Resources.surname;
+            this.pictureBox4.InitialImage = global::WinFormsSQL.Properties.Resources.surname;
+            this.pictureBox4.Location = new System.Drawing.Point(421, 106);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::WinFormsSQL.Properties.Resources.surname;
+            this.pictureBox3.InitialImage = global::WinFormsSQL.Properties.Resources.surname;
+            this.pictureBox3.Location = new System.Drawing.Point(27, 106);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // userSurnameField
+            // 
+            this.userSurnameField.Font = new System.Drawing.Font("Comic Sans MS", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userSurnameField.Location = new System.Drawing.Point(491, 106);
+            this.userSurnameField.Multiline = true;
+            this.userSurnameField.Name = "userSurnameField";
+            this.userSurnameField.Size = new System.Drawing.Size(244, 64);
+            this.userSurnameField.TabIndex = 3;
+            this.userSurnameField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userSurnameField.Enter += new System.EventHandler(this.userSurnameField_Enter);
+            this.userSurnameField.Leave += new System.EventHandler(this.userSurnameField_Leave);
+            // 
+            // userNameField
+            // 
+            this.userNameField.Font = new System.Drawing.Font("Comic Sans MS", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userNameField.Location = new System.Drawing.Point(97, 106);
+            this.userNameField.Multiline = true;
+            this.userNameField.Name = "userNameField";
+            this.userNameField.Size = new System.Drawing.Size(244, 64);
+            this.userNameField.TabIndex = 2;
+            this.userNameField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userNameField.Enter += new System.EventHandler(this.userNameField_Enter);
+            this.userNameField.Leave += new System.EventHandler(this.userNameField_Leave);
             // 
             // buttonRegister
             // 
@@ -96,7 +144,7 @@
             this.buttonRegister.Location = new System.Drawing.Point(270, 285);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(256, 62);
-            this.buttonRegister.TabIndex = 5;
+            this.buttonRegister.TabIndex = 1;
             this.buttonRegister.Text = "Зареєструватися";
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
@@ -107,11 +155,22 @@
             this.passField.Location = new System.Drawing.Point(491, 200);
             this.passField.Name = "passField";
             this.passField.Size = new System.Drawing.Size(244, 56);
-            this.passField.TabIndex = 4;
+            this.passField.TabIndex = 5;
             this.passField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passField.UseSystemPasswordChar = true;
             this.passField.Enter += new System.EventHandler(this.passField_Enter);
             this.passField.Leave += new System.EventHandler(this.passField_Leave);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WinFormsSQL.Properties.Resources._lock;
+            this.pictureBox2.InitialImage = global::WinFormsSQL.Properties.Resources._lock;
+            this.pictureBox2.Location = new System.Drawing.Point(421, 200);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // loginField
             // 
@@ -120,10 +179,21 @@
             this.loginField.Multiline = true;
             this.loginField.Name = "loginField";
             this.loginField.Size = new System.Drawing.Size(244, 64);
-            this.loginField.TabIndex = 2;
+            this.loginField.TabIndex = 4;
             this.loginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.loginField.Enter += new System.EventHandler(this.loginField_Enter);
             this.loginField.Leave += new System.EventHandler(this.loginField_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinFormsSQL.Properties.Resources.user;
+            this.pictureBox1.InitialImage = global::WinFormsSQL.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -152,79 +222,25 @@
             this.CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
             this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
             // 
-            // userNameField
+            // autorizationLabel
             // 
-            this.userNameField.Font = new System.Drawing.Font("Comic Sans MS", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userNameField.Location = new System.Drawing.Point(97, 106);
-            this.userNameField.Multiline = true;
-            this.userNameField.Name = "userNameField";
-            this.userNameField.Size = new System.Drawing.Size(244, 64);
-            this.userNameField.TabIndex = 6;
-            this.userNameField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.userNameField.Enter += new System.EventHandler(this.userNameField_Enter);
-            this.userNameField.Leave += new System.EventHandler(this.userNameField_Leave);
-            // 
-            // userSurnameField
-            // 
-            this.userSurnameField.Font = new System.Drawing.Font("Comic Sans MS", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userSurnameField.Location = new System.Drawing.Point(491, 106);
-            this.userSurnameField.Multiline = true;
-            this.userSurnameField.Name = "userSurnameField";
-            this.userSurnameField.Size = new System.Drawing.Size(244, 64);
-            this.userSurnameField.TabIndex = 7;
-            this.userSurnameField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.userSurnameField.Enter += new System.EventHandler(this.userSurnameField_Enter);
-            this.userSurnameField.Leave += new System.EventHandler(this.userSurnameField_Leave);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::WinFormsSQL.Properties.Resources.surname;
-            this.pictureBox3.InitialImage = global::WinFormsSQL.Properties.Resources.surname;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 106);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WinFormsSQL.Properties.Resources._lock;
-            this.pictureBox2.InitialImage = global::WinFormsSQL.Properties.Resources._lock;
-            this.pictureBox2.Location = new System.Drawing.Point(421, 200);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WinFormsSQL.Properties.Resources.user;
-            this.pictureBox1.InitialImage = global::WinFormsSQL.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::WinFormsSQL.Properties.Resources.surname;
-            this.pictureBox4.InitialImage = global::WinFormsSQL.Properties.Resources.surname;
-            this.pictureBox4.Location = new System.Drawing.Point(421, 106);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
+            this.autorizationLabel.AutoSize = true;
+            this.autorizationLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.autorizationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.autorizationLabel.Location = new System.Drawing.Point(346, 350);
+            this.autorizationLabel.Name = "autorizationLabel";
+            this.autorizationLabel.Size = new System.Drawing.Size(109, 15);
+            this.autorizationLabel.TabIndex = 10;
+            this.autorizationLabel.Text = "Вже є аккаунт?";
+            this.autorizationLabel.Click += new System.EventHandler(this.autorizationLabel_Click);
+            this.autorizationLabel.MouseEnter += new System.EventHandler(this.autorizationLabel_MouseEnter);
+            this.autorizationLabel.MouseLeave += new System.EventHandler(this.autorizationLabel_MouseLeave);
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 376);
+            this.ClientSize = new System.Drawing.Size(800, 390);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterForm";
@@ -232,12 +248,12 @@
             this.Text = "RegisterForm";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +273,6 @@
         private System.Windows.Forms.TextBox userNameField;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label autorizationLabel;
     }
 }
